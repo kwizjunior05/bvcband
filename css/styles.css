@@ -931,4 +931,9 @@ audio {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
+
+  .social-links {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
