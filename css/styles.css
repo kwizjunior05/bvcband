@@ -792,6 +792,68 @@ audio {
   font-size: 0.85rem;
 }
 
+/* --- Lightbox Image --- */
+.lightbox-image {
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.lightbox-image:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  object-fit: contain;
+}
+
+.lightbox-overlay-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--transition);
+}
+
+.lightbox-overlay-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* --- Scroll Animations --- */
 .fade-in {
   opacity: 0;

@@ -147,4 +147,50 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.reset();
   });
 
+  // --- Lightbox Image (click-to-enlarge class) ---
+  const lightboxImages = document.querySelectorAll('img.lightbox-image');
+
+  if (lightboxImages.length) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-overlay-close" aria-label="Close lightbox">&times;</button><img src="" alt="">';
+    document.body.appendChild(overlay);
+
+    const overlayImg = overlay.querySelector('img');
+    const overlayClose = overlay.querySelector('.lightbox-overlay-close');
+
+    const openLightbox = (src, alt) => {
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    lightboxImages.forEach(img => {
+      img.addEventListener('click', () => {
+        const fullSrc = img.getAttribute('data-full-src') || img.src;
+        openLightbox(fullSrc, img.alt);
+      });
+    });
+
+    overlayClose.addEventListener('click', closeLightbox);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
 });
