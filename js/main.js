@@ -61,6 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScrollSpy, { passive: true });
 
+  // --- Years of Music ---
+  const yearsEl = document.getElementById('years-of-music');
+  if (yearsEl) {
+    yearsEl.textContent = new Date().getFullYear() - 2008;
+  }
+
   // --- Scroll Fade-In Animations ---
   const fadeElements = document.querySelectorAll('.fade-in');
 
