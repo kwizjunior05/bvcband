@@ -78,6 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => fadeObserver.observe(el));
 
+  // --- About Image Pan on Mobile ---
+  const aboutImg = document.querySelector('.about-image img');
+  if (aboutImg && window.innerWidth <= 768) {
+    const aboutSection = document.querySelector('.about');
+
+    const handlePan = () => {
+      const rect = aboutSection.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const progress = (vh - rect.top) / (vh + rect.height);
+      const clamped = Math.max(0, Math.min(1, progress));
+      aboutImg.style.transform = `translateX(${-37.5 + clamped * 37.5}%)`;
+    };
+
+    window.addEventListener('scroll', handlePan, { passive: true });
+    handlePan();
+  }
+
   // --- Gallery Lightbox ---
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
