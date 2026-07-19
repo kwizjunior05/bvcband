@@ -479,6 +479,14 @@ audio {
   box-shadow: var(--shadow-lg);
 }
 
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+}
+
 .gallery-placeholder {
   aspect-ratio: 1;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);

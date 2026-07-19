@@ -84,40 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => fadeObserver.observe(el));
 
-  // --- Gallery Lightbox ---
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const lightboxClose = document.querySelector('.lightbox-close');
-
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const caption = item.getAttribute('data-caption');
-      lightboxCaption.textContent = caption || 'Photo';
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  lightboxClose.addEventListener('click', closeLightbox);
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
-
   // --- Contact Form Handling ---
   const contactForm = document.getElementById('contact-form');
 
