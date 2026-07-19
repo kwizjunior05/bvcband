@@ -220,7 +220,7 @@ ul {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-  /* Replace with a real image: background: url('../images/hero-bg.jpg') center/cover; */
+  /* Replace with a real image: background: url('../media/images/hero-bg.jpg') center/cover; */
   text-align: center;
   overflow: hidden;
 }
