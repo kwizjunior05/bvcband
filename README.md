@@ -25,6 +25,7 @@ I settled on HTML, CSS, JavaScript for several reasons:
 - [ ] Fill out the image gallery
 - [ ] Add Donate button and link
 - [ ] Add member information/expectations
+- [ ] Add throbbing scroll indicator/down caret on the first page
 
 # Development Resources
 
