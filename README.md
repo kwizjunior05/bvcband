@@ -19,7 +19,7 @@ I settled on HTML, CSS, JavaScript for several reasons:
 - [x] Confirm start year is correct
 - [ ] (in progress) Correct the information that is already on the site
 - [ ] (in progress) Get some audio samples
-- [ ] Replace quick links with actual helpful links
+- [ ] Replace quick links with member links
 - [ ] Add other information from bvcband.org
 - [ ] Recreate and regenerate favicons (I don't like the design I made yesterday anymore)
 - [ ] Fill out the image gallery
